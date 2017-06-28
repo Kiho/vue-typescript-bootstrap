@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label :for="uuid" class="control-label col-md-3 col-sm-3 col-xs-12">{{label}}</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <select class="form-control" :value="value" :id="uuid"
+            @input="$emit('input', parseInt($event.target.value))">
+            <option value="">-</option>
+            <option v-for="opt in optionList" :value="opt.id">{{ getOptionName(opt) }}</option>
+        </select>   
+    </div>
+</div>

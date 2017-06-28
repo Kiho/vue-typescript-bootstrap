@@ -1,0 +1,19 @@
+<div class="form-group">
+    <label :for="uuid" class="control-label col-md-3 col-sm-3 col-xs-12">{{label}}</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <input type='number' v-if="type=='number'"
+            class="form-control" 
+            :id="uuid"
+            :placeholder="placeholder"
+            :readonly="readOnly"
+            :value="value" 
+            @input="$emit('input', $event.target.value)">
+        <input type='text' v-else
+            class="form-control" 
+            :id="uuid"
+            :placeholder="placeholder"
+            :readonly="readOnly"            
+            :value="value" 
+            @input="$emit('input', $event.target.value)">    
+    </div>
+</div>

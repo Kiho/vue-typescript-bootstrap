@@ -1,0 +1,23 @@
+<div v-bind:class="{['col-' + col]: true}">
+    <div v-bind:class="['panel', filled ? 'panel-filled' : '', loader && loading ? 'ld-loading' : '']">
+        <div class="loader" v-if="loader">
+            <div v-bind:class="{['loader-' + loader]: true}"></div>
+        </div>
+        <div class="panel-heading" v-if="tools || title">
+            <div class="panel-tools" v-if="tools">
+                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                <a class="panel-close"><i class="fa fa-times"></i></a>
+            </div>
+            {{ title }}
+        </div>
+        <div class="panel-body">
+            <p v-if="description">
+                {{ description }}
+            </p>
+            <slot></slot>
+        </div>
+    </div>
+    <div class="btn-toolbar" ref="toolbar" v-if="toolbar">
+        <Button color="primary" >Load</Button>
+    </div>
+</div>

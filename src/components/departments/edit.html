@@ -1,0 +1,26 @@
+<panel loader="bar" filled="true">
+    <form class="form-horizontal">
+        <text-field
+            :label="'Department #'"
+            :readOnly="true"
+            v-model="item.id"
+            />
+        <text-field
+            :label="'Department Name'"
+            :required="true"
+            v-model="item.name"
+            />
+        <text-field
+            :label="'Group Name'"
+            :required="true"
+            v-model="item.groupName"
+            />
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" class="btn btn-success" @click="handleSubmit">Submit</button>
+                <button class="btn btn-primary" type="button" @click="handleGoBack">Cancel</button>
+            </div>
+        </div>    
+    </form>
+</panel>
