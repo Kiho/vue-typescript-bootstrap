@@ -107,6 +107,7 @@
     "tslint-loader": "~3.4.3",
     "typescript": "^2.3.0",
     "vue-loader": "^12.2.1",
+    "vue-progressbar": "^0.7.2",
     "vue-template-compiler": "^2.3.4",
     "webpack": "~2.2.1",
     "webpack-dev-server": "~2.4.2"

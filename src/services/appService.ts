@@ -40,11 +40,9 @@ export default class AppService extends PageService {
         let data;
 
         const startLoading = () => {
-            // app.set({loading: false});
             app.$Progress.start();
         };
         const completeLoading = () => {
-            // app.set({loading: false});
             app.$Progress.finish();
         };
         

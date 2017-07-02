@@ -24,6 +24,7 @@ export class NavSideComponent extends Vue {
     @watch('$route.path')
     pathChanged() {
         this.logger.info('Changed current path to: ' + this.$route.path);
+        console.log(this.$route);
     }
 
     mounted() {
