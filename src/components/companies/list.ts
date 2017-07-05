@@ -9,7 +9,7 @@ import Service from '../../services/appService';
 import { PanelComponent } from '../../common/panel';
 
 const service = new Service();
-const entityType: EntityType = 'department';
+const entityType: EntityType = 'company';
 
 @Component({
     template: require('./list.html'),
@@ -17,9 +17,9 @@ const entityType: EntityType = 'department';
         'panel': PanelComponent,
     }
 })
-export class CompanysComponent extends Vue {
+export class CompaniesComponent extends Vue {
 
-    name: 'department-index';
+    name: 'company-index';
 
     protected logger: Logger;
 
@@ -36,52 +36,17 @@ export class CompanysComponent extends Vue {
             list: [],
             entityType: entityType,
             header: {
-                title: 'Companys',
+                title: 'Companies',
                 icon: 'sitemap',
                 hidden: false,
-                viewPath: '<small><span class="c-white">Companys</span></small>'
+                viewPath: '<small><span class="c-white">Companies</span></small>'
             },
         };
     }
 
     mounted() {
-        console.log('Companys', this.$el.textContent); // I'm text inside the component.
+        console.log('Companies', this.$el.textContent); // I'm text inside the component.
         service.init(this);
         service.getList(this);    
     }
 }
-
-
-// export default {
-//     components: {
-//         ViewHeader,
-//         Panel,
-//         Button,
-//         Link,
-//     },
-//     data() {
-//         return { 
-//             list: [],
-//             entityType: entityType,
-//             header: {
-//                 title: 'Companys',
-//                 icon: 'sitemap',
-//                 hidden: false,
-//                 viewPath: '<small><span class="c-white">Companys</span></small>'
-//             },
-//         }
-//     },
-//     oncreate() {
-//         service.init(this);
-//         service.initHeader(this);
-//         service.getList(this);         
-//     },
-//     methods: {
-//         createNew: function(e) {
-//             window.location.href = '#departments';
-//         } 
-//     },
-//     helpers: {
-//         formatDate: utils.formatDate
-//     }
-// }

@@ -18,7 +18,8 @@ export class NavSideComponent extends Vue {
         new Link('Home', '/', 'home'),
         new Link('Departments', '/departments', 'sitemap'),
         new Link('Employees', '/employees', 'users'),
-        new Link('About', '/about', 'leaf')
+        new Link('About', '/about', 'leaf'),
+        new Link('Table', '/table', 'sitemap')
     ];
 
     @watch('$route.path')

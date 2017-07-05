@@ -106,6 +106,8 @@
     "tslint": "~4.5.1",
     "tslint-loader": "~3.4.3",
     "typescript": "^2.3.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.98.2",
     "vue-loader": "^12.2.1",
     "vue-progressbar": "^0.7.2",
     "vue-template-compiler": "^2.3.4",

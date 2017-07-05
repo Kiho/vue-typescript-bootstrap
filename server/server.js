@@ -32,7 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
     publicPath: config.assetsPublicPath,
     contentBase: path.resolve(__dirname, 'public'),
     inline: true,
-    hot: true,
+    hot: false,
     historyApiFallback: true,
     headers: {
       "Access-Control-Allow-Origin": "*",

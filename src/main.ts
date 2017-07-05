@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 import { HomeComponent } from './components/home';
 import { AboutComponent } from './components/about';
+import { TableComponent } from './components/table';
 import { 
   DepartmentsComponent, 
   DepartmentEditComponent 
@@ -11,6 +12,10 @@ import {
   EmployeesComponent, 
   EmployeeEditComponent 
 } from './components/employees';
+import { 
+  CompaniesComponent, 
+  CompanyEditComponent 
+} from './components/companies';
 import { NavSideComponent } from './components/navside';
 import { ViewHeaderComponent } from './common/view-header';
 import VueProgressBar from 'vue-progressbar';
@@ -32,7 +37,10 @@ let router = new VueRouter({
     { path: '/departments', component: DepartmentsComponent },
     { path: '/employees/:id', component: EmployeeEditComponent },
     { path: '/employees', component: EmployeesComponent },
+    { path: '/companies/:id', component: CompanyEditComponent },
+    { path: '/companies', component: CompaniesComponent },
     { path: '/about', component: AboutComponent },
+    { path: '/table', component: TableComponent },
   ]
 });
 

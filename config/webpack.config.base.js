@@ -11,7 +11,7 @@ let config = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: [".ts", ".js", ".html"],
+    extensions: [".ts", ".js", ".html" ],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }

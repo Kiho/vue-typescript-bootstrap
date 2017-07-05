@@ -38,16 +38,16 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody v-for="department in list">
+                <tbody v-for="company in list">
                     <tr>
-                        <td>{{department.id}}</td>
-                        <td>{{department.name}}</td>
-                        <td>{{department.groupName}}</td>
-                        <td><a :href="'#departments/' + department.id" class="btn btn-default btn-xs">Edit</a></td>
+                        <td>{{company.id}}</td>
+                        <td>{{company.name}}</td>
+                        <td>{{company.contactName}}</td>
+                        <td><a :href="'#companys/' + company.id" class="btn btn-default btn-xs">Edit</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <a href="#departments/0" class="btn btn-default">New</a>
+        <a href="#companys/0" class="btn btn-default">New</a>
     </panel>
 </div>
