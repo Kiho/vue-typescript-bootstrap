@@ -3,6 +3,7 @@ const router = express.Router();
 
 import employees from './dummyEmployees.json';
 import departments from './dummyDepartments.json';
+import companies from './dummyCompanies.json';
 
 function getNextId(list){
     var arr = list.map(x => x.id);
@@ -80,4 +81,40 @@ router.route('/employee/:employeeId')
         res.status(200).send();
     });
 
+router.route('/company/')
+    .get((req, res) => {
+        res.send(companies.filter(x => x.id > 0));
+    })
+    .post((req, res) => {
+        console.log('post companyId', 0, data);
+        const data = req.body; // JSON.parse(req.body);
+        data.id = getNextId(companies);
+        console.log(data);
+        companies.push(data.data);
+        res.status(200).send(data);
+    });    
+
+router.route('/company/:companyId')
+    .get((req, res) => {      
+        const id = parseInt(req.params.companyId);
+        const idx = companies.findIndex((company) => company.id === id);
+        console.log('get companyId', id, idx);
+        res.send(companies[idx]);
+    })    
+    .put((req, res) => { 
+        const id = parseInt(req.params.companyId);
+        const data = req.body; // JSON.parse(req.body);
+        const idx = companies.findIndex((company) => company.id === id);
+        console.log('put companyId', id, idx, data);
+        companies[idx] = data.data;
+        res.status(200).send(data);
+    })
+    .delete((req, res) => {
+        const id = parseInt(req.params.companyId);
+        const idx = companies.findIndex((company) => company.id === id);
+        console.log('delete companyId', id, idx);
+        companies.splice(idx, 1);
+        res.status(200).send();
+    });
+    
 export default router;
