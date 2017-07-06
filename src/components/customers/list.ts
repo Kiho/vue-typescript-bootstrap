@@ -9,7 +9,7 @@ import Service from '../../services/appService';
 import { PanelComponent } from '../../common/panel';
 
 const service = new Service();
-const entityType: EntityType = 'company';
+const entityType: EntityType = 'customer';
 
 @Component({
     template: require('./list.html'),
@@ -17,9 +17,9 @@ const entityType: EntityType = 'company';
         'panel': PanelComponent,
     }
 })
-export class CompaniesComponent extends Vue {
+export class CustomersComponent extends Vue {
 
-    name: 'company-index';
+    name: 'customer-index';
 
     protected logger: Logger;
 
@@ -36,16 +36,16 @@ export class CompaniesComponent extends Vue {
             list: [],
             entityType: entityType,
             header: {
-                title: 'Companies',
+                title: 'Customers',
                 icon: 'sitemap',
                 hidden: false,
-                viewPath: '<small><span class="c-white">Companies</span></small>'
+                viewPath: '<small><span class="c-white">Customers</span></small>'
             },
         };
     }
 
     mounted() {
-        console.log('Companies', this.$el.textContent); // I'm text inside the component.
+        console.log('Customers', this.$el.textContent); // I'm text inside the component.
         service.init(this);
         service.getList(this);    
     }

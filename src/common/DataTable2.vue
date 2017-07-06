@@ -1,5 +1,5 @@
 <template>
-	<div class="card material-table">
+	<div class="table-responsive">
 		<div class="table-header">
 			<span class="table-title">{{title}}</span>
 			<div class="actions">
@@ -38,7 +38,9 @@
 				</label>
 			</div>
 		</div>
-		<table ref="table">
+		<table id="employees"
+                ref="table"
+                class="table table-striped table-hover">
 			<thead>
 				<tr>
 					<th v-for="(column, index) in columns"
@@ -99,7 +101,7 @@
 	</div>
 </template>
 
-<script>
+<script type="ts">
 	import Fuse from 'fuse.js';
 
 	export default {
@@ -210,7 +212,7 @@
 				table += '</tr>';
 
 				table += '</thead><tbody>';
-
+				
 				for (var i = 0; i < this.rows.length; i++) {
 					const row = this.rows[i];
 					table += '<tr>';
@@ -337,9 +339,9 @@
 </script>
 
 <style scoped>
-	div.material-table {
+	/*div.material-table {
 		padding: 0;
-	}
+	}*/
 
 	tr.clickable {
 		cursor: pointer;
@@ -348,8 +350,8 @@
 	#search-input {
 		margin: 0;
 		border: transparent 0 !important;
-		height: 48px;
-		color: rgba(0, 0, 0, .84);
+		/*height: 48px;
+		color: rgba(0, 0, 0, .84);*/
 	}
 
 	#search-input-container {
@@ -357,9 +359,9 @@
 		border-bottom: solid 1px #DDDDDD;
 	}
 
-	table {
+	/*table {
 		table-layout: fixed;
-	}
+	}*/
 
 	.table-header {
 		height: 64px;
@@ -490,17 +492,17 @@
 	}
 
 	table tr td {
-		padding: 0 0 0 56px;
+		/*padding: 0 0 0 56px;
 		height: 48px;
 		font-size: 13px;
 		color: rgba(0, 0, 0, 0.87);
-		border-bottom: solid 1px #DDDDDD;
+		border-bottom: solid 1px #DDDDDD;*/
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 
-	table td, table th {
+	/*table td, table th {
     	border-radius: 0;
 	}
 
@@ -515,19 +517,19 @@
 
 	table tr {
 		font-size: 12px;
-	}
+	}*/
 
 	table th {
-		font-size: 12px;
+		/*font-size: 12px;
 		font-weight: 500;
-		color: #757575;
+		color: #757575;*/
 		cursor: pointer;
 		white-space: nowrap;
 		padding: 0;
 		height: 56px;
 		padding-left: 56px;
 		vertical-align: middle;
-		outline: none !important;
+		/*outline: none !important;*/
 
 	    overflow: hidden;
 	    text-overflow: ellipsis;
@@ -558,7 +560,7 @@
 		-webkit-font-smoothing: antialiased;
 		content: "arrow_back";
 		-webkit-transform: rotate(90deg);
-		display: none;
+		/*display: none;*/
 		vertical-align: middle;
 	}
 

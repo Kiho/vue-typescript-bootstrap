@@ -3,7 +3,7 @@ const router = express.Router();
 
 import employees from './dummyEmployees.json';
 import departments from './dummyDepartments.json';
-import companies from './dummyCompanies.json';
+import customers from './dummyCustomers.json';
 
 function getNextId(list){
     var arr = list.map(x => x.id);
@@ -81,39 +81,39 @@ router.route('/employee/:employeeId')
         res.status(200).send();
     });
 
-router.route('/company/')
+router.route('/customer/')
     .get((req, res) => {
-        res.send(companies.filter(x => x.id > 0));
+        res.send(customers.filter(x => x.id > 0));
     })
     .post((req, res) => {
-        console.log('post companyId', 0, data);
+        console.log('post customerId', 0, data);
         const data = req.body; // JSON.parse(req.body);
-        data.id = getNextId(companies);
+        data.id = getNextId(customers);
         console.log(data);
-        companies.push(data.data);
+        customers.push(data.data);
         res.status(200).send(data);
     });    
 
-router.route('/company/:companyId')
+router.route('/customer/:customerId')
     .get((req, res) => {      
-        const id = parseInt(req.params.companyId);
-        const idx = companies.findIndex((company) => company.id === id);
-        console.log('get companyId', id, idx);
-        res.send(companies[idx]);
+        const id = parseInt(req.params.customerId);
+        const idx = customers.findIndex((customer) => customer.id === id);
+        console.log('get customerId', id, idx);
+        res.send(customers[idx]);
     })    
     .put((req, res) => { 
-        const id = parseInt(req.params.companyId);
+        const id = parseInt(req.params.customerId);
         const data = req.body; // JSON.parse(req.body);
-        const idx = companies.findIndex((company) => company.id === id);
-        console.log('put companyId', id, idx, data);
-        companies[idx] = data.data;
+        const idx = customers.findIndex((customer) => customer.id === id);
+        console.log('put customerId', id, idx, data);
+        customers[idx] = data.data;
         res.status(200).send(data);
     })
     .delete((req, res) => {
-        const id = parseInt(req.params.companyId);
-        const idx = companies.findIndex((company) => company.id === id);
-        console.log('delete companyId', id, idx);
-        companies.splice(idx, 1);
+        const id = parseInt(req.params.customerId);
+        const idx = customers.findIndex((customer) => customer.id === id);
+        console.log('delete customerId', id, idx);
+        customers.splice(idx, 1);
         res.status(200).send();
     });
     

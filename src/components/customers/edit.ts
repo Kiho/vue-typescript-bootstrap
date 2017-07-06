@@ -8,7 +8,7 @@ import { PanelComponent } from '../../common/panel';
 import { TextFieldComponent } from '../../common/text-field';
 
 const service = new Service();
-const entityType: EntityType = 'company';
+const entityType: EntityType = 'customer';
 
 @Component({
     template: require('./edit.html'),
@@ -17,7 +17,7 @@ const entityType: EntityType = 'company';
         'text-field': TextFieldComponent,
     }
 })
-export class CompanyEditComponent extends Vue {
+export class CustomerEditComponent extends Vue {
     entityType = entityType;
     id = 0;
     loading = false;
@@ -26,12 +26,12 @@ export class CompanyEditComponent extends Vue {
         return { 
             item: {},
             header: {
-                title: 'Company',
+                title: 'Customer',
                 icon: 'home',
                 hidden: false,
-                viewPath: '<small><span class="c-white">Company</span></small>'
+                viewPath: '<small><span class="c-white">Customer</span></small>'
             },
-            companyList: [],
+            customerList: [],
             employeeList: []
         };
     }

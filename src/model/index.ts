@@ -1,12 +1,12 @@
 ﻿import { Employee } from './Employee';
 import { Department } from './Department';
-import { Company } from './Company';
+import { Customer } from './Customer';
 
-export type EntityType = 'department' | 'employee' | 'company';
+export type EntityType = 'department' | 'employee' | 'customer';
 
 export { Department } from './Department';
 export { Employee } from './Employee';
-export { Company } from './Company';
+export { Customer } from './Customer';
 
 export interface IEntity {
     loading: boolean;
@@ -21,8 +21,8 @@ export const createNew = (path: EntityType) => {
             return Object.assign({}, Employee);
         case 'department':
             return Object.assign({}, Department);
-        case 'company':
-            return Object.assign({}, Company);
+        case 'customer':
+            return Object.assign({}, Customer);
     }
     return null;
 };

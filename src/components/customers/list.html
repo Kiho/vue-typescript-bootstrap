@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="input-group m-b-xs m-t-xs">
-                    <input class="form-control" type="text" placeholder="Search by Company.." style="width: 100%">
+                    <input class="form-control" type="text" placeholder="Search by Customer.." style="width: 100%">
                     <div class="input-group-btn">
                         <button class="btn btn-default"><i class="fa fa-search"></i></button>
                     </div>
@@ -32,22 +32,22 @@
                 class="table table-vertical-align-middle">
                 <thead>
                     <tr>
-                        <th>Company#</th>
-                        <th>Company</th>
+                        <th>Customer#</th>
+                        <th>Customer</th>
                         <th>Contact</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody v-for="company in list">
+                <tbody v-for="customer in list">
                     <tr>
-                        <td>{{company.id}}</td>
-                        <td>{{company.name}}</td>
-                        <td>{{company.contactName}}</td>
-                        <td><a :href="'#companys/' + company.id" class="btn btn-default btn-xs">Edit</a></td>
+                        <td>{{customer.id}}</td>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.contactName}}</td>
+                        <td><a :href="'#customers/' + customer.id" class="btn btn-default btn-xs">Edit</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <a href="#companys/0" class="btn btn-default">New</a>
+        <a href="#customers/0" class="btn btn-default">New</a>
     </panel>
 </div>

@@ -13,9 +13,9 @@ import {
   EmployeeEditComponent 
 } from './components/employees';
 import { 
-  CompaniesComponent, 
-  CompanyEditComponent 
-} from './components/companies';
+  CustomersComponent, 
+  CustomerEditComponent 
+} from './components/customers';
 import { NavSideComponent } from './components/navside';
 import { ViewHeaderComponent } from './common/view-header';
 import VueProgressBar from 'vue-progressbar';
@@ -37,8 +37,8 @@ let router = new VueRouter({
     { path: '/departments', component: DepartmentsComponent },
     { path: '/employees/:id', component: EmployeeEditComponent },
     { path: '/employees', component: EmployeesComponent },
-    { path: '/companies/:id', component: CompanyEditComponent },
-    { path: '/companies', component: CompaniesComponent },
+    { path: '/customers/:id', component: CustomerEditComponent },
+    { path: '/customers', component: CustomersComponent },
     { path: '/about', component: AboutComponent },
     { path: '/table', component: TableComponent },
   ]

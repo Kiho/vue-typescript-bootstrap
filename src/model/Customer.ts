@@ -1,11 +1,11 @@
 import { IEntityItem } from '.';
 
-export interface ICompany extends IEntityItem {
+export interface ICustomer extends IEntityItem {
     name?: string;
     contactName?: string;
 }
 
-export const Company: ICompany = {
+export const Customer: ICustomer = {
     id: 0,
     name: '',
     contactName: ''
