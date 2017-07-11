@@ -7,6 +7,7 @@ import { EntityType } from '../../model';
 import * as utils from '../../utils';
 import Service from '../../services/appService';
 import { PanelComponent } from '../../common/panel';
+import DataTableComponent from '../../common/DataTable2.vue';
 
 const service = new Service();
 const entityType: EntityType = 'customer';
@@ -14,6 +15,7 @@ const entityType: EntityType = 'customer';
 @Component({
     template: require('./list.html'),
     components: {
+        'datatable': DataTableComponent,
         'panel': PanelComponent,
     }
 })
@@ -41,6 +43,42 @@ export class CustomersComponent extends Vue {
                 hidden: false,
                 viewPath: '<small><span class="c-white">Customers</span></small>'
             },
+            columndata: [ // Array of objects
+                {
+                    label: 'ID', // Column name
+                    field: 'id', // Field name from row
+                    numeric: true, // Affects sorting
+                    html: false, // Escapes output if false.
+                }, {
+                    label: 'First Name', // Column name
+                    field: 'fname', // Field name from row
+                    numeric: false, // Affects sorting
+                    html: false, // Escapes output if false.
+                }, {
+                    label: 'Last Name',
+                    field: 'lname',
+                    numeric: false,
+                    html: false,
+                }, {
+                    label: 'Age',
+                    field: 'age',
+                    numeric: true,
+                    html: false,
+                }, {
+                    label: 'State',
+                    field: 'state',
+                    numeric: false,
+                    html: false,
+                }, {
+                    label: 'Action',
+                    field: function (data) {
+                        return '<a href="#customers/' + data.id + '" class="btn btn-default btn-xs">Edit</a>';
+                    },
+                    numeric: false,
+                    html: true,
+                    sortable: false
+                }
+            ]
         };
     }
 

@@ -1,53 +1,6 @@
 ﻿<div>
-    <panel loader="bar" filled="true">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="input-group m-b-xs m-t-xs">
-                    <input class="form-control" type="text" placeholder="Search by Customer.." style="width: 100%">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <select class="form-control m-b-xs m-t-xs" name="account" style="width: 100%">
-                    <option selected="">Select status</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                </select>
-            </div>
-            <div class="col-lg-3">
-                <select class="form-control m-t-xs" name="account" style="width: 100%">
-                    <option selected="">Sort by:</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                </select>
-            </div>
-        </div>
-    </panel>
-
     <panel loader="bar">
-        <div class="table-responsive">
-            <table id="projects"
-                class="table table-vertical-align-middle">
-                <thead>
-                    <tr>
-                        <th>Customer#</th>
-                        <th>Customer</th>
-                        <th>Contact</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody v-for="customer in list">
-                    <tr>
-                        <td>{{customer.id}}</td>
-                        <td>{{customer.name}}</td>
-                        <td>{{customer.contactName}}</td>
-                        <td><a :href="'#customers/' + customer.id" class="btn btn-default btn-xs">Edit</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <datatable title="Demo" :rows="list" :columns="columndata"></datatable>
         <a href="#customers/0" class="btn btn-default">New</a>
     </panel>
 </div>

@@ -18,6 +18,7 @@ export class NavSideComponent extends Vue {
         new Link('Home', '/', 'home'),
         new Link('Departments', '/departments', 'sitemap'),
         new Link('Employees', '/employees', 'users'),
+        new Link('Customers', '/customers', 'users'),
         new Link('About', '/about', 'leaf'),
         new Link('Table', '/table', 'sitemap')
     ];

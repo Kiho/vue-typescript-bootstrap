@@ -3,7 +3,8 @@
 		<div class="table-header">
 			<span class="table-title">{{title}}</span>
 			<div class="actions">
-				<a v-for="button in customButtons" href="javascript:undefined"
+				<a v-for="(button, x) in customButtons" href="javascript:undefined"
+				   :key="x"
 				   class="waves-effect btn-flat nopadding"
 				   v-if="button.hide ? !button.hide : true"
 				   @click="button.onclick">
@@ -43,9 +44,10 @@
                 class="table table-striped table-hover">
 			<thead>
 				<tr>
-					<th v-for="(column, index) in columns"
+					<th v-for="(column, index) in columns" 
+						:key="index"
 						@click="sort(index)"
-						:class="(sortable ? 'sorting ' : '')
+						:class="(sortable && column.sortable !== false ? 'sorting ' : '')
 							+ (sortColumn === index ?
 								(sortType === 'desc' ? 'sorting-desc' : 'sorting-asc')
 								: '')
@@ -58,8 +60,8 @@
 			</thead>
 
 			<tbody>
-				<tr v-for="(row, index) in paginated" :class="{ clickable : clickable }" @click="click(row)">
-					<td v-for="column in columns" :class=" { numeric : column.numeric } ">
+				<tr v-for="(row, y) in paginated" :key="y" :class="{ clickable : clickable }" @click="click(row)">
+					<td v-for="(column, x) in columns" :key="x" :class=" { numeric : column.numeric } ">
 						<div v-if="!column.html"> {{ collect(row, column.field) }} </div>
 						<div v-if="column.html" v-html="collect(row, column.field)"></div>						
 					</td>
@@ -73,7 +75,7 @@
 				<label>
 					<span>Rows per page:</span>
 					<select class="browser-default" @change="onTableLength">
-						<option v-for="option in perPageOptions" :value="option" :selected="option == currentPerPage">
+						<option v-for="(option, x) in perPageOptions" :key="x" :value="option" :selected="option == currentPerPage">
 					    {{ option === -1 ? 'All' : option }}
 					  </option>
 					</select>
@@ -149,7 +151,7 @@
 			},
 
 			sort: function(index) {
-				if (!this.sortable)
+				if (!this.sortable || this.columns[index].sortable === false)
 					return;
 				if (this.sortColumn === index) {
 					this.sortType = this.sortType === 'asc' ? 'desc' : 'asc';
@@ -280,7 +282,7 @@
 			processedRows: function() {
 				var computedRows = this.rows;
 
-				if (this.sortable !== false)
+				if (this.sortable !== false && this.sortColumn > -1)
 					computedRows = computedRows.sort((x,y) => {
 						if (!this.columns[this.sortColumn])
 							return 0;
@@ -550,7 +552,7 @@
 		font-family: 'Material Icons';
 		font-weight: normal;
 		font-style: normal;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 1;
 		letter-spacing: normal;
 		text-transform: none;
@@ -561,13 +563,15 @@
 		content: "arrow_back";
 		-webkit-transform: rotate(90deg);
 		/*display: none;*/
+		color: rgba(0, 0, 0, 0);
 		vertical-align: middle;
 	}
 
 	table th.sorting:hover:after,
 	table th.sorting-asc:after,
 	table th.sorting-desc:after {
-		display: inline-block;
+		/*display: inline-block;*/
+		color: rgba(0, 0, 0, 0.87);
 	}
 
 	table th.sorting-desc:after {
