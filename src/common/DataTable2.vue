@@ -39,8 +39,7 @@
 				</label>
 			</div>
 		</div>
-		<table id="employees"
-                ref="table"
+		<table ref="table"
                 class="table table-striped table-hover">
 			<thead>
 				<tr>
