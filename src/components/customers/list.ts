@@ -7,7 +7,7 @@ import { EntityType } from '../../model';
 import * as utils from '../../utils';
 import Service from '../../services/appService';
 import { PanelComponent } from '../../common/panel';
-import DataTableComponent from '../../common/DataTable2.vue';
+import DataTableComponent from '../../common/DataTable.vue';
 
 const service = new Service();
 const entityType: EntityType = 'customer';
@@ -39,7 +39,7 @@ export class CustomersComponent extends Vue {
             entityType: entityType,
             header: {
                 title: 'Customers',
-                icon: 'sitemap',
+                icon: 'users',
                 hidden: false,
                 viewPath: '<small><span class="c-white">Customers</span></small>'
             },

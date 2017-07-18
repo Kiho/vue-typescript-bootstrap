@@ -49,6 +49,7 @@ router.route('/department/:departmentId')
 
 router.route('/employee/')
     .get((req, res) => {
+        console.log('get employee Count', employees.filter(x => x.id > 0).length);
         res.send(employees.filter(x => x.id > 0));
     })
     .post((req, res) => {

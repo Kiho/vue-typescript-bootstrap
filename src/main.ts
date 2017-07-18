@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 
 import { HomeComponent } from './components/home';
 import { AboutComponent } from './components/about';
-import { TableComponent } from './components/table';
 import { 
   DepartmentsComponent, 
   DepartmentEditComponent 
@@ -40,7 +39,6 @@ let router = new VueRouter({
     { path: '/customers/:id', component: CustomerEditComponent },
     { path: '/customers', component: CustomersComponent },
     { path: '/about', component: AboutComponent },
-    { path: '/table', component: TableComponent },
   ]
 });
 

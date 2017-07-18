@@ -27,7 +27,7 @@ export class CustomerEditComponent extends Vue {
             item: {},
             header: {
                 title: 'Customer',
-                icon: 'home',
+                icon: 'users',
                 hidden: false,
                 viewPath: '<small><span class="c-white">Customer</span></small>'
             },
