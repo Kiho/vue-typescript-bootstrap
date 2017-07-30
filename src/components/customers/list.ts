@@ -83,7 +83,7 @@ export class CustomersComponent extends Vue {
     }
 
     mounted() {
-        console.log('Customers', this.$el.textContent); // I'm text inside the component.
+        // console.log('Customers', this.$el.textContent); // I'm text inside the component.
         service.init(this);
         service.getList(this);    
     }

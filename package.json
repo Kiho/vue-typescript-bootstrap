@@ -24,7 +24,7 @@
     "copy-vendor": "cpx src/vendor/**/* ./dist/vendor",
     "copy-h-file": "cpx ./dist/**/* ../heroku/vue-app/public",
     "copy-h-vendor": "cpx src/vendor/toastr/* ../heroku/vue-app/public/vendor/toastr",
-    "dev": "cross-env NODE_ENV=development npm run sass && concurrently --kill-others \"webpack-dev-server --hot --inline\" \"node-sass --watch --output ./src/css ./src/sass\"",
+    "dev": "cross-env NODE_ENV=development npm run sass && concurrently --kill-others \"npm run serve-api\" \"webpack-dev-server --hot --inline\" \"node-sass --watch --output ./src/css ./src/sass\"",
     "lint": "tslint src/**/*.ts",
     "process:html": "htmlprocessor src/index.html -o dist/index.html",
     "sass": "node-sass --output ./src/css ./src/sass",
