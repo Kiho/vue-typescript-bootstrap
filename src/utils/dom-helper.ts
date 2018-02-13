@@ -1,13 +1,13 @@
 export function addClickHandler (selector, onClick) {
-	document.querySelectorAll(selector).forEach((element) => {
+    const elements: Element[] = Array.from(document.querySelectorAll(selector));
+    for (let element of elements) {
 		element.addEventListener('click', (e) => {
 			if (e && e.preventDefault) e.preventDefault();
-                onClick();
+                onClick(e.target);
 			}
-		)		
-	});
+		)
+    }
 }
-
 export function toggleClass(element, toggleClass) {
     const currentClass = element.className;
     let newClass;

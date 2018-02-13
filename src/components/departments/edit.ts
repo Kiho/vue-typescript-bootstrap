@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component, watch } from 'vue-property-decorator';
+import { Component, Watch } from 'vue-property-decorator';
 
 import { EntityType } from '../../model';
 import Service from '../../services/appService';

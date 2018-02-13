@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component, watch } from 'vue-property-decorator';
+import { Component, Watch } from 'vue-property-decorator';
 import { Logger } from '../../util/log';
 
 import { server } from '../../api';
@@ -50,38 +50,3 @@ export class DepartmentsComponent extends Vue {
         service.getList(this);    
     }
 }
-
-
-// export default {
-//     components: {
-//         ViewHeader,
-//         Panel,
-//         Button,
-//         Link,
-//     },
-//     data() {
-//         return { 
-//             list: [],
-//             entityType: entityType,
-//             header: {
-//                 title: 'Departments',
-//                 icon: 'sitemap',
-//                 hidden: false,
-//                 viewPath: '<small><span class="c-white">Departments</span></small>'
-//             },
-//         }
-//     },
-//     oncreate() {
-//         service.init(this);
-//         service.initHeader(this);
-//         service.getList(this);         
-//     },
-//     methods: {
-//         createNew: function(e) {
-//             window.location.href = '#departments';
-//         } 
-//     },
-//     helpers: {
-//         formatDate: utils.formatDate
-//     }
-// }

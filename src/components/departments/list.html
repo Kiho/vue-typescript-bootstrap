@@ -43,7 +43,7 @@
                         <td>{{department.id}}</td>
                         <td>{{department.name}}</td>
                         <td>{{department.groupName}}</td>
-                        <td><a :href="'#departments/' + department.id" class="btn btn-default btn-xs">Edit</a></td>
+                        <td><router-link :to='{path: "/departments/" + department.id}' class="btn btn-default btn-xs">Edit</router-link></td>
                     </tr>
                 </tbody>
             </table>

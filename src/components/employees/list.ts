@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component, watch } from 'vue-property-decorator';
+import { Component, Watch } from 'vue-property-decorator';
 import { Logger } from '../../util/log';
 
 import { EntityType } from '../../model';
@@ -47,7 +47,7 @@ export class EmployeesComponent extends Vue {
         });
     }
 
-    @watch('dataSource')
+    @Watch('dataSource')
     dataChanged(data) {
         grid.updateTable(this, data);
     }
@@ -74,7 +74,7 @@ export class EmployeesComponent extends Vue {
                 } },
                 { data: 'rate' },
                 { data: function (data, type, row, meta) {
-                    return '<a href="#employees/' + data.id + '" class="btn btn-default btn-xs">Edit</a>';
+                    return '<a href="#/employees/' + data.id + '" class="btn btn-default btn-xs">Edit</a>';
                 } },
             ],
         };

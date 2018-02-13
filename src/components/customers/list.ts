@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component, watch } from 'vue-property-decorator';
+import { Component, Watch } from 'vue-property-decorator';
 import { Logger } from '../../util/log';
 
 import { server } from '../../api';
@@ -72,7 +72,7 @@ export class CustomersComponent extends Vue {
                 }, {
                     label: 'Action',
                     field: function (data) {
-                        return '<a href="#customers/' + data.id + '" class="btn btn-default btn-xs">Edit</a>';
+                        return '<a href="#/customers/' + data.id + '" class="btn btn-default btn-xs">Edit</a>';
                     },
                     numeric: false,
                     html: true,

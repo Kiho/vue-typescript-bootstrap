@@ -18,6 +18,10 @@ webpackConfig.module.rules = [{
     test: /\.html$/,
     loader: 'raw-loader',
     exclude: ['./src/index.html']
+  },
+  {
+    test: /\.vue$/,
+    loader: 'raw-loader'
   }
 ];
 
