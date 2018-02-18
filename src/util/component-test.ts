@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component } from 'vue'
+import { Component } from 'vue';
 import { SinonSpy } from 'sinon';
 import merge from 'lodash.merge';
 import { ILogger } from './log';

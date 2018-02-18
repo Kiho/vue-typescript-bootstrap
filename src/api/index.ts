@@ -3,4 +3,4 @@ import * as auth from './auth';
 
 export {
     server, auth
-}
+};
