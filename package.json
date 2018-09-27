@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "axios": "~0.15.3",
-    "bootstrap": "~3.3.7",
     "fuse.js": "^3.2.0",
     "vue": "^2.5.2",
     "vue-class-component": "^6.0.0",
