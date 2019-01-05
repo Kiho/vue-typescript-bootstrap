@@ -6,11 +6,10 @@
       "es2015",
       "es2015.promise"
     ],
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "target": "es5",
     "sourceMap": true,
-    "allowJs": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true

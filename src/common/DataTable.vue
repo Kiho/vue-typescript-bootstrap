@@ -340,10 +340,6 @@
 </script>
 
 <style scoped>
-	/*div.material-table {
-		padding: 0;
-	}*/
-
 	tr.clickable {
 		cursor: pointer;
 	}
@@ -351,18 +347,12 @@
 	#search-input {
 		margin: 0;
 		border: transparent 0 !important;
-		/*height: 48px;
-		color: rgba(0, 0, 0, .84);*/
 	}
 
 	#search-input-container {
 		padding: 0 14px 0 24px;
 		border-bottom: solid 1px #DDDDDD;
 	}
-
-	/*table {
-		table-layout: fixed;
-	}*/
 
 	.table-header {
 		height: 64px;

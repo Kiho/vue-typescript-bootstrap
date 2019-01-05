@@ -3,6 +3,6 @@ node_modules/
 dist/
 coverage/
 src/css
+src/**/*.js
 src/**/*.map
 *.log
-npm-debug.log.*

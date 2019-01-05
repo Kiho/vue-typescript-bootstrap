@@ -1,9 +1,10 @@
-var webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.base'),
-    DefinePlugin = require('webpack/lib/DefinePlugin'),
-    env = require('../environment/dev.env');
+const webpackConfig = require('./webpack.config.base')
+const DefinePlugin = require('webpack/lib/DefinePlugin')
+const SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin')
+const env = require('../environment/dev.env')
 
-webpackConfig.module.rules = [{
+webpackConfig.module.rules = [
+  {
     test: /\.ts$/,
     exclude: /node_modules/,
     loader: 'awesome-typescript-loader',
@@ -20,21 +21,34 @@ webpackConfig.module.rules = [{
     exclude: ['./src/index.html']
   },
   {
-    test: /\.vue$/,
-    loader: 'raw-loader'
+    test: /\.scss$/,
+    use: [{
+      loader: 'style-loader'
+    },
+    {
+      loader: 'css-loader'
+    },
+    {
+      loader: 'sass-loader'
+    }
+    ]
+  },
+  {
+    test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+    loader: 'url-loader?limit=8192'
   }
-];
+]
 
 webpackConfig.plugins = [...webpackConfig.plugins,
-  new webpack.SourceMapDevToolPlugin({
+  new SourceMapDevToolPlugin({
     filename: null, // if no value is provided the sourcemap is inlined
     test: /\.(ts|js)($|\?)/i
   }),
   new DefinePlugin({
     'process.env': env
   })
-];
+]
 
-webpackConfig.devtool = 'inline-source-map';
+webpackConfig.devtool = 'inline-source-map'
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

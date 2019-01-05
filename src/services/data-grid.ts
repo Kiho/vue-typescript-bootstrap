@@ -22,6 +22,7 @@ export default {
         this.getTable().remove();
     },
     getTable () {
+        // @ts-ignore
         return $(this.ref);
     },
     initTable(component: Vue, options) {
