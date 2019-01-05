@@ -38,7 +38,7 @@ let config = {
     {
       test: /\.html$/,
       loader: 'raw-loader',
-      exclude: ['./src/index.html']
+      // exclude: ['./src/index.html']
     },
     {
       test: /\.css$/,
